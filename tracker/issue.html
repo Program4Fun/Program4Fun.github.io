@@ -1,0 +1,26 @@
+<div class="jumbotron" ng-controller="createIssueCtrl">
+	<h3>Add New Issue:</h3>
+	<form name="form" id="issueInputForm" novalidate>
+		<div class="form-group">
+			<label for="issueDescInput">Description</label>
+			<label for="issueDescInput" class="pull-right">תיאור</label>
+			<input type="text" id="issueDescInput" class="form-control" placeholder="Describe the issue ..." ng-model="description" required />
+		</div>
+		<div class="form-group">
+			<label for="issueSeverityInput">Severity</label>
+			<label for="issueSeverityInput" class="pull-right">דחיפות</label>
+			<select id="issueSeverityInput" class="form-control">
+				<option value="Low">Low</option>
+				<option value="Medium">Medium</option>
+				<option value="High">High</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="issueAssignedToInput">Assigned To</label>
+			<label for="issueAssignedToInput" class="pull-right">אחראי</label>
+			<input type="text" id="issueAssignedToInput" class="form-control" placeholder="Enter responsible ..." ng-model="assignTo" required />
+		</div>
+		<button type="submit" class="btn btn-primary" ng-class="{disabled: form.$invalid}" ng-click="form.$valid && createIssue(); form.$invalid=true; form.$valid=false">Add</button>
+		<a href="#!/" class="btn btn-default pull-right">Back</a>
+	</form>
+</div>

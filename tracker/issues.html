@@ -1,0 +1,16 @@
+<div class="col-lg-12" ng-controller="issuesListCtrl">
+	<ul class="nav nav-pills nav-justified">
+	  <li role="presentation" ng-class="{active: $root.currentTab=='High'}"><a href="" ng-click="$root.currentTab='High'">High</a></li>
+	  <li role="presentation" ng-class="{active: $root.currentTab=='Medium'}"><a href="" ng-click="$root.currentTab='Medium'">Medium</a></li>
+	  <li role="presentation" ng-class="{active: $root.currentTab=='Low'}"><a href="" ng-click="$root.currentTab='Low'">Low</a></li>
+	</ul>
+	<div id="issuesListHigh" ng-show="currentTab=='High'" ng-repeat="issue in $root.issues | display:'High'">
+		<issue></issue>
+	</div>
+	<div id="issuesListMedium" ng-show="currentTab=='Medium'" ng-repeat="issue in $root.issues | display:'Medium'">
+		<issue></issue>
+	</div>
+	<div id="issuesListLow" ng-show="currentTab=='Low'" ng-repeat="issue in $root.issues | display:'Low'">
+		<issue></issue>
+	</div>
+</div>

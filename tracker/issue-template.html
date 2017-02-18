@@ -1,0 +1,32 @@
+<div class="well" id="{{ issue.id }}" style="word-wrap: break-word;">
+	<button class="btn pull-right" ng-click="issue.pinned=!issue.pinned" ng-class="{pinned:issue.pinned}">
+		<span class="glyphicon glyphicon-pushpin pull-right"></span>
+	</button>
+	<h6>Issue ID: {{ issue.id }}</h6>
+	<p><span class="label" ng-class="{'label-primary':issue.status=='Opened', 'label-info':issue.status=='Reopened', 'label-success':issue.status=='Closed'}"> {{ issue.status }}</span></p>
+	<h3 ng-show="issue.editMode===false">{{ issue.description }}</h3>
+	<input type="text" class="form-control" ng-model="issue.description" ng-show="issue.editMode===true" />
+	<p><span class="glyphicon glyphicon-time"></span> 
+		<span ng-show="issue.editMode===false">{{ issue.severity }}</span>
+		<select class="form-control" ng-show="issue.editMode===true" ng-model="issue.severity" ng-change="changeTab(issue.severity)">
+			<option value="Low">Low</option>
+			<option value="Medium">Medium</option>
+			<option value="High">High</option>
+		</select>
+	</p>
+	<p><span class="glyphicon glyphicon-user"></span> 
+	<span ng-show="issue.editMode===false">{{ issue.assignedTo }}</span>
+	<input type="text" class="form-control" ng-model="issue.assignedTo" ng-show="issue.editMode===true" />
+	</p>
+	<div ng-show="issue.editMode===false">
+		<button id="btnCloseIssue" class="btn btn-warning" ng-click="toggleIssue(issue.id)">{{ issue.status!=="Closed"?"Close":"Reopen" }}</button>
+		<button id="btnShowDetails" class="btn btn-primary">Details</button>
+		<button id="btnDeleteIssue" class="btn btn-danger" ng-click="deleteIssue(issue.id)">Delete</button>
+		<button class="btn btn-default pull-right" ng-show="issue.status!=='Closed'&&$root.isEdit==false" ng-click="issue.editMode=true;$root.isEdit=true">
+			<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+		</button>
+	</div>
+	<div ng-show="issue.editMode===true">
+		<button class="btn btn-success" ng-click="saveEdit(issue)">Save</button>
+	</div>
+</div>
