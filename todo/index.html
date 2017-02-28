@@ -12,6 +12,9 @@
 <body>
 	<!-- Side nav -->
 	<ul id="mobile" class="side-nav">
+		<li class="center">
+			<img src="user.png" class="responsive-img circle" style="margin-top:20px">
+		</li>
 		<li><a href="#!">First Item</a></li>
 		<li><a href="#!">Second Item</a></li>
 		<li><a href="#!">Third Item</a></li>
@@ -36,11 +39,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 	<script>
 		$(document).ready(function(){
+			// Initialize side nav.
 			$(".button-collapse").sideNav({
 				edge: 'left',
 				closeOnClick: true,
 				draggable: true
 			});
+
+			// Solve problem of side nav overlay.
 			$(".drag-target").on("swipeleft", function () {
 			     $("#sidenav-overlay").trigger("click");
 			});
