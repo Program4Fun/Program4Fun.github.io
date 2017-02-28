@@ -63,6 +63,7 @@ app.controller('createIssueCtrl', ['$scope', '$rootScope', '$location', function
 			pinned: false
 		};
 
+		// Clear form inputs.
 		jq("#issueInputForm")[0].reset();
 
 		$scope.issues.push(issue);
