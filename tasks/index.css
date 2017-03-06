@@ -106,7 +106,7 @@ input {
     cursor: pointer;
 }
 
-@media(max-width:900px) {
+@media only screen {
 	/* Style the input */
 	input {
 	    border: none;
