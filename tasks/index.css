@@ -106,7 +106,7 @@ input {
     cursor: pointer;
 }
 
-@media only screen {
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
 	/* Style the input */
 	input {
 	    border: none;
