@@ -47,8 +47,9 @@ $(document).ready(function(){
   function newTask() {
     var input = $("#newTaskInput");
     var title = $(input).val();
-    tasks.push({title:title, done:false});
-    addTask(title);
+    var obj = {title:title, done:false};
+    tasks.push(obj);
+    addTask(obj);
     input.val('');
   }
 
