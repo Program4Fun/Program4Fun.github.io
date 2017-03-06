@@ -88,7 +88,7 @@ ul li.checked::before {
 /* Style the input */
 input {
     border: none;
-    width: 75%;
+    width: 65%;
     padding: 10px;
     float: left;
     font-size: 16px;
@@ -97,36 +97,13 @@ input {
 /* Style the "Add" button */
 .addTaskBtn {
     padding: 10px;
-    width: 25%;
+    width: 35%;
     background: #d9d9d9;
     color: #555;
     float: left;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-}
-
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
-	/* Style the input */
-	input {
-	    border: none;
-	    width: 70%;
-	    padding: 10px;
-	    float: left;
-	    font-size: 16px;
-	}
-
-	/* Style the "Add" button */
-	.addTaskBtn {
-	    padding: 10px;
-	    width: 30%;
-	    background: #d9d9d9;
-	    color: #555;
-	    float: left;
-	    text-align: center;
-	    font-size: 16px;
-	    cursor: pointer;
-	}
 }
 
 .addTaskBtn:hover {
