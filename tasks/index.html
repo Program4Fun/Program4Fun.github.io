@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>My Tasks</title>
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
-	
+	<div id="header" class="header">
+		<h2>My Tasks List</h2>
+		<input type="text" id="newTaskInput" placeholder="Task title...">
+		<span onclick="newTask()" class="addTaskBtn">Add Task</span>
+	</div>
+	<ul id="tasks">
+		<li>Hit the gym</li>
+		<li class="checked">Pay bills</li>
+		<li>Meet George</li>
+		<li>Buy eggs</li>
+		<li>Read a book</li>
+		<li>Organize office</li>
+	</ul>
+
+	<script src="index.js"></script>
 </body>
 </html>
