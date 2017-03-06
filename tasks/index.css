@@ -7,6 +7,7 @@
 ul {
     margin: 0;
     padding: 0;
+    font-family: 'roboto-light';
 }
 
 /* Style the list items */
@@ -71,11 +72,11 @@ ul li.checked::before {
 
 /* Style the header */
 .header {
-	background-color: teal;
-    /*background-color: #f44336;*/
+    background-color: #f44336;
     padding: 30px 40px;
     color: white;
     text-align: center;
+    font-family: 'roboto';
 }
 
 /* Clear floats after the header */
