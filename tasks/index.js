@@ -1,10 +1,10 @@
 $(document).ready(function(){
   var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-  window.onbeforeunload = function(event) {
+  window.onbeforeunload = (function(event) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     return;
-  };
+  });
 
   for (var task of tasks) {
     addTask(task);
