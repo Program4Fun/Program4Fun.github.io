@@ -12,8 +12,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
 	<script>
 		function createNotification() {
-			//Push.create('New Notification')
-			new Notification('New Notification')
+			navigator.serviceWorker.register('./sw.js');
+			Notification.requestPermission(function(result) {
+			  if (result === 'granted') {
+			    navigator.serviceWorker.ready.then(function(registration) {
+			      registration.showNotification('Notification with ServiceWorker');
+			    });
+			  }
+			});
 		}
 
 		function closeNotification() {
