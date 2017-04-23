@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Canon V2</title>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+	<div id="app" :dir="direction">
+		<header>
+			<div id="content">
+				
+			</div>	
+		</header>
+		<nav>
+			
+		</nav>
+		<main>
+			
+		</main>
+		<div id="fab">
+			<span class="material-icons">fullscreen</span>
+		</div>
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				direction: 'ltr'
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Notification</title>
+</head>
+<body>
+	<button onclick="createNotification()">Create Notification</button>
+	<button onclick="closeNotification()">Close Notification</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+	<script>
+		function createNotification() {
+			Push.create('New Notification')
+		}
+
+		function closeNotification() {
+			Push.clear()
+		}
+	</script>
+</body>
+</html>
