@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <h1>This is an HTML page!</h1>
+<body dir="rtl">
+    <ul>
+        <li class="blue-items">I'm blue!</li>
+        <li class="blue-items">I'm blue!</li>
+        <li>I'm black..</li>
+    </ul>
+
+    <div id="app"></div>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="ejs.js"></script>
+    <script>
+        var strings = {
+            topHeading: 'מדריך css',
+            basicRulesHeading: 'כללי בסיס',
+            test: 'hi',
+            basicRules: [
+                'כל כלל <span class="bold">חייב</span> להסתיים בנקודה פסיק!',
+                '<span class="bold">לכל</span> אלמנט יש שני מאפיינים: id וclass',
+                'ההבדל בין שני המאפיינים: id ייחודי עבור כל אלמנט. משמש כמזהה חד חד ערכי עבור אלמנט.',
+                'הערך של class יכול להיות משותף למספר אלמנטים בעמוד. משמש כמזהה לקבוצה של אלמנטים.'
+            ],
+            identifyRules: [
+                'ע״מ לזהות אלמנט עפ״י התג שלו יש לכתוב את שם התג. לדוגמא: <br><img src="images/css_tag_name.png" alt="not found">',
+                'ע״מ לזהות אלמנט עפ״י הid שלו יש להקדים לid את הסימן #. לדוגמא: <br><img src="images/css_id.png" alt="not found">',
+                'ע״מ לזהות אלמנט עפ״י הclass שלו יש להקדים נקודה לשם הclass. לדוגמא: <br><img src="images/css_id.png" alt="not found">',
+                'ע״מ לזהות עפ״י סלקטורים שונים יש להפריד את הסלקטורים בפסיק. לדוגמא: <code>h1, #my-heading { ... }</code>',
+                'ע״מ לזהות אלמנט שהוא צאצא של אלמנט אחר, יש לכתוב את שם האב ואחריו את שם הצאצא <span class="bold">מבלי</span> להפרידם בפסיק. לדוגמא: <code>ul li { ... }</code>'
+            ],
+            includeCssHeading: '3 דרכים להוסיף css לדף:',
+            includeCss: [
+                'בתוך האלמנט (inline). יחול <span class="bold">רק על האלמנט הספציפי הזה.</span> דוגמא:\
+        <img src="images/inline_code.png" alt="not working">',
+                'בין תגי <code>style</code> (תג זה חייב לבוא בתוך הhead!). דוגמא:\
+        <br>\
+        <img src="images/style_tag.png" alt="not working">',
+            'בקובץ נפרד. במקרה זה יש לייבא את הקובץ באמצעות תג <code>link</code>. גם תג זה חייב לבוא בתוך הhead. דוגמא:\
+        <br>\
+        <img src="images/include_link.png" alt="not working">'
+            ],
+            boxModelHeading: 'מודל הקופסא (Box Model)',
+            boxModelTerms: [
+                '<span class="bold">content</span> - התוכן של האלמנט (בדר״כ הטקסט עצמו)',
+                '<span class="bold">padding</span> - הרווח שבין הcontent לborder (רווח ״פנימי״ של האלמנט)',
+                '<span class="bold">border</span> - הגבול של האלמנט. ברירת מחדל: אין גבול (גבול 0).',
+                '<span class="bold">margin</span> - הרווח שבין האלמנט לאלמנטים שמצדדיו. (הרווח ״חיצוני״ של האלמנט).'
+            ]
+        }
+    </script>
+    <script>
+        $.ajax({
+            url: 'index.ejs',
+            type: 'get',
+            success: function(data) {
+                var html = ejs.render(data, strings)
+                $('#app').html(html)
+            }
+        })
+    </script>
 </body>
 </html>

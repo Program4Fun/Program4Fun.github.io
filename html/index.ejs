@@ -1,0 +1,31 @@
+<h1><%= topHeading %></h1>
+    
+<h2><%= basicRulesHeading %></h2>
+<ul>
+    <% for (var rule of basicRules) { %>
+        <li><%- rule %></li>
+    <% } %>
+    <li>
+        כללי זיהוי אלמנטים בסיסיים(סלקטורים):
+        <ul>
+            <% for (var rule of identifyRules) { %>
+                <li><%- rule %></li>
+            <% } %>
+        </ul>
+    </li>
+</ul>
+
+<h2><%= includeCssHeading %></h2>
+<ul>
+    <% for (var include of includeCss) { %>
+        <li><%- include %></li>
+    <% } %>
+</ul>
+
+<h2><%= boxModelHeading %></h2>
+מונחים בסיסיים:
+<ul>
+    <% for (var term of boxModelTerms) { %>
+        <li><%- term %></li>
+    <% } %>
+</ul>
